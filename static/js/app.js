@@ -25,3 +25,13 @@ function buildTable(data) {
         });
     });
 }
+
+// Function to handle user clicks on filter button
+function handleClick() {
+
+    // Look for and store data values from webpage 
+    let date = d3.select("#datetime").property("value");
+
+    // Set default filter as original table data
+    let filteredData = tableData;
+}
