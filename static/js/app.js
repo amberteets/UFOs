@@ -34,4 +34,18 @@ function handleClick() {
 
     // Set default filter as original table data
     let filteredData = tableData;
+
+    // Filter by date
+    if ( date ) {
+        filteredData = filteredData.filter(row => row.datetime === date);
+    };
+
+    // Rebuild table with filtered data
+    buildTable(filteredData);
 }
+
+// Listen for a filter click event
+d3.selectAll("#filter-btn").on("click", handleClick);
+
+// Build table when page loads
+buildTable(tableData);
